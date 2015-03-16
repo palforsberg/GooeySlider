@@ -1,0 +1,420 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D15AF9251AB7218C00B7A976 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D15AF9241AB7218C00B7A976 /* AppDelegate.swift */; };
+		D15AF9271AB7218C00B7A976 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D15AF9261AB7218C00B7A976 /* ViewController.swift */; };
+		D15AF92A1AB7218C00B7A976 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D15AF9281AB7218C00B7A976 /* Main.storyboard */; };
+		D15AF92C1AB7218C00B7A976 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D15AF92B1AB7218C00B7A976 /* Images.xcassets */; };
+		D15AF92F1AB7218C00B7A976 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D15AF92D1AB7218C00B7A976 /* LaunchScreen.xib */; };
+		D15AF93B1AB7218C00B7A976 /* GooeySelectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D15AF93A1AB7218C00B7A976 /* GooeySelectTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D15AF9351AB7218C00B7A976 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D15AF9171AB7218C00B7A976 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D15AF91E1AB7218C00B7A976;
+			remoteInfo = GooeySelect;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		D15AF91F1AB7218C00B7A976 /* GooeySelect.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GooeySelect.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D15AF9231AB7218C00B7A976 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D15AF9241AB7218C00B7A976 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		D15AF9261AB7218C00B7A976 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D15AF9291AB7218C00B7A976 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D15AF92B1AB7218C00B7A976 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		D15AF92E1AB7218C00B7A976 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		D15AF9341AB7218C00B7A976 /* GooeySelectTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GooeySelectTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D15AF9391AB7218C00B7A976 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D15AF93A1AB7218C00B7A976 /* GooeySelectTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GooeySelectTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D15AF91C1AB7218C00B7A976 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D15AF9311AB7218C00B7A976 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D15AF9161AB7218C00B7A976 = {
+			isa = PBXGroup;
+			children = (
+				D15AF9211AB7218C00B7A976 /* GooeySelect */,
+				D15AF9371AB7218C00B7A976 /* GooeySelectTests */,
+				D15AF9201AB7218C00B7A976 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D15AF9201AB7218C00B7A976 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D15AF91F1AB7218C00B7A976 /* GooeySelect.app */,
+				D15AF9341AB7218C00B7A976 /* GooeySelectTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D15AF9211AB7218C00B7A976 /* GooeySelect */ = {
+			isa = PBXGroup;
+			children = (
+				D15AF9241AB7218C00B7A976 /* AppDelegate.swift */,
+				D15AF9261AB7218C00B7A976 /* ViewController.swift */,
+				D15AF9281AB7218C00B7A976 /* Main.storyboard */,
+				D15AF92B1AB7218C00B7A976 /* Images.xcassets */,
+				D15AF92D1AB7218C00B7A976 /* LaunchScreen.xib */,
+				D15AF9221AB7218C00B7A976 /* Supporting Files */,
+			);
+			path = GooeySelect;
+			sourceTree = "<group>";
+		};
+		D15AF9221AB7218C00B7A976 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D15AF9231AB7218C00B7A976 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D15AF9371AB7218C00B7A976 /* GooeySelectTests */ = {
+			isa = PBXGroup;
+			children = (
+				D15AF93A1AB7218C00B7A976 /* GooeySelectTests.swift */,
+				D15AF9381AB7218C00B7A976 /* Supporting Files */,
+			);
+			path = GooeySelectTests;
+			sourceTree = "<group>";
+		};
+		D15AF9381AB7218C00B7A976 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D15AF9391AB7218C00B7A976 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D15AF91E1AB7218C00B7A976 /* GooeySelect */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D15AF93E1AB7218C00B7A976 /* Build configuration list for PBXNativeTarget "GooeySelect" */;
+			buildPhases = (
+				D15AF91B1AB7218C00B7A976 /* Sources */,
+				D15AF91C1AB7218C00B7A976 /* Frameworks */,
+				D15AF91D1AB7218C00B7A976 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GooeySelect;
+			productName = GooeySelect;
+			productReference = D15AF91F1AB7218C00B7A976 /* GooeySelect.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D15AF9331AB7218C00B7A976 /* GooeySelectTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D15AF9411AB7218C00B7A976 /* Build configuration list for PBXNativeTarget "GooeySelectTests" */;
+			buildPhases = (
+				D15AF9301AB7218C00B7A976 /* Sources */,
+				D15AF9311AB7218C00B7A976 /* Frameworks */,
+				D15AF9321AB7218C00B7A976 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D15AF9361AB7218C00B7A976 /* PBXTargetDependency */,
+			);
+			name = GooeySelectTests;
+			productName = GooeySelectTests;
+			productReference = D15AF9341AB7218C00B7A976 /* GooeySelectTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D15AF9171AB7218C00B7A976 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0620;
+				ORGANIZATIONNAME = "Pål Forsberg";
+				TargetAttributes = {
+					D15AF91E1AB7218C00B7A976 = {
+						CreatedOnToolsVersion = 6.2;
+					};
+					D15AF9331AB7218C00B7A976 = {
+						CreatedOnToolsVersion = 6.2;
+						TestTargetID = D15AF91E1AB7218C00B7A976;
+					};
+				};
+			};
+			buildConfigurationList = D15AF91A1AB7218C00B7A976 /* Build configuration list for PBXProject "GooeySelect" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D15AF9161AB7218C00B7A976;
+			productRefGroup = D15AF9201AB7218C00B7A976 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D15AF91E1AB7218C00B7A976 /* GooeySelect */,
+				D15AF9331AB7218C00B7A976 /* GooeySelectTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D15AF91D1AB7218C00B7A976 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D15AF92A1AB7218C00B7A976 /* Main.storyboard in Resources */,
+				D15AF92F1AB7218C00B7A976 /* LaunchScreen.xib in Resources */,
+				D15AF92C1AB7218C00B7A976 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D15AF9321AB7218C00B7A976 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D15AF91B1AB7218C00B7A976 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D15AF9271AB7218C00B7A976 /* ViewController.swift in Sources */,
+				D15AF9251AB7218C00B7A976 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D15AF9301AB7218C00B7A976 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D15AF93B1AB7218C00B7A976 /* GooeySelectTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D15AF9361AB7218C00B7A976 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D15AF91E1AB7218C00B7A976 /* GooeySelect */;
+			targetProxy = D15AF9351AB7218C00B7A976 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		D15AF9281AB7218C00B7A976 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D15AF9291AB7218C00B7A976 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		D15AF92D1AB7218C00B7A976 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D15AF92E1AB7218C00B7A976 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D15AF93C1AB7218C00B7A976 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		D15AF93D1AB7218C00B7A976 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D15AF93F1AB7218C00B7A976 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = GooeySelect/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		D15AF9401AB7218C00B7A976 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = GooeySelect/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		D15AF9421AB7218C00B7A976 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = GooeySelectTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GooeySelect.app/GooeySelect";
+			};
+			name = Debug;
+		};
+		D15AF9431AB7218C00B7A976 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = GooeySelectTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GooeySelect.app/GooeySelect";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D15AF91A1AB7218C00B7A976 /* Build configuration list for PBXProject "GooeySelect" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D15AF93C1AB7218C00B7A976 /* Debug */,
+				D15AF93D1AB7218C00B7A976 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D15AF93E1AB7218C00B7A976 /* Build configuration list for PBXNativeTarget "GooeySelect" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D15AF93F1AB7218C00B7A976 /* Debug */,
+				D15AF9401AB7218C00B7A976 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		D15AF9411AB7218C00B7A976 /* Build configuration list for PBXNativeTarget "GooeySelectTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D15AF9421AB7218C00B7A976 /* Debug */,
+				D15AF9431AB7218C00B7A976 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D15AF9171AB7218C00B7A976 /* Project object */;
+}

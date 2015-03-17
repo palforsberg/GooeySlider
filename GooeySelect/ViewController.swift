@@ -8,11 +8,11 @@
 
 import UIKit
 
-class ViewController: UIViewController, GooeySelectDelegate{
+class ViewController: UIViewController, GooeySliderDelegate{
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        let select = GooeySelect(frame: CGRect(x: 20, y: 400, width: 280, height: 50))
+        let select = GooeySlider(frame: CGRect(x: 20, y: 400, width: 280, height: 50))
         select.delegate = self
         select.color = UIColor.redColor()
         select.showProgessLine = true
@@ -21,7 +21,7 @@ class ViewController: UIViewController, GooeySelectDelegate{
         self.view.addSubview(select)
     }
 
-    func gooeySelectDidSelect(gs: GooeySelect, index: Int) {
+    func gooeySliderDidSelect(gs: GooeySlider, index: Int) {
         println("Did select \(index)")
     }
 

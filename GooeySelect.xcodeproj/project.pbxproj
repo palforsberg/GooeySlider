@@ -17,7 +17,7 @@
 		D15AF9471AB721EB00B7A976 /* Vectors.swift in Sources */ = {isa = PBXBuildFile; fileRef = D15AF9461AB721EB00B7A976 /* Vectors.swift */; };
 		D15AF9491AB7220100B7A976 /* SpringAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D15AF9481AB7220100B7A976 /* SpringAnimation.swift */; };
 		D15AF94B1AB7222400B7A976 /* LineLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D15AF94A1AB7222400B7A976 /* LineLayer.swift */; };
-		D1D9F76F1AB8306C0047A906 /* GooeySelect.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D9F76E1AB8306C0047A906 /* GooeySelect.swift */; };
+		D1D9F76F1AB8306C0047A906 /* GooeySlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D9F76E1AB8306C0047A906 /* GooeySlider.swift */; };
 		D1FCEE731AB72A8F001DC648 /* GooeyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1FCEE721AB72A8F001DC648 /* GooeyView.swift */; };
 /* End PBXBuildFile section */
 
@@ -46,7 +46,7 @@
 		D15AF9461AB721EB00B7A976 /* Vectors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Vectors.swift; path = ../Vectors.swift; sourceTree = "<group>"; };
 		D15AF9481AB7220100B7A976 /* SpringAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpringAnimation.swift; sourceTree = "<group>"; };
 		D15AF94A1AB7222400B7A976 /* LineLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineLayer.swift; sourceTree = "<group>"; };
-		D1D9F76E1AB8306C0047A906 /* GooeySelect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GooeySelect.swift; sourceTree = "<group>"; };
+		D1D9F76E1AB8306C0047A906 /* GooeySlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GooeySlider.swift; sourceTree = "<group>"; };
 		D1FCEE721AB72A8F001DC648 /* GooeyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GooeyView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -91,7 +91,7 @@
 			children = (
 				D15AF9241AB7218C00B7A976 /* AppDelegate.swift */,
 				D15AF9261AB7218C00B7A976 /* ViewController.swift */,
-				D1D9F7701AB87A870047A906 /* GooeySelect */,
+				D1D9F7701AB87A870047A906 /* GooeySlider */,
 				D15AF9281AB7218C00B7A976 /* Main.storyboard */,
 				D15AF92B1AB7218C00B7A976 /* Images.xcassets */,
 				D15AF92D1AB7218C00B7A976 /* LaunchScreen.xib */,
@@ -125,17 +125,17 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		D1D9F7701AB87A870047A906 /* GooeySelect */ = {
+		D1D9F7701AB87A870047A906 /* GooeySlider */ = {
 			isa = PBXGroup;
 			children = (
-				D1D9F76E1AB8306C0047A906 /* GooeySelect.swift */,
+				D1D9F76E1AB8306C0047A906 /* GooeySlider.swift */,
 				D15AF94A1AB7222400B7A976 /* LineLayer.swift */,
 				D1FCEE721AB72A8F001DC648 /* GooeyView.swift */,
 				D15AF9441AB721CA00B7A976 /* GooeyLayer.swift */,
 				D15AF9461AB721EB00B7A976 /* Vectors.swift */,
 				D15AF9481AB7220100B7A976 /* SpringAnimation.swift */,
 			);
-			name = GooeySelect;
+			name = GooeySlider;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -245,7 +245,7 @@
 				D15AF9491AB7220100B7A976 /* SpringAnimation.swift in Sources */,
 				D15AF9471AB721EB00B7A976 /* Vectors.swift in Sources */,
 				D15AF9251AB7218C00B7A976 /* AppDelegate.swift in Sources */,
-				D1D9F76F1AB8306C0047A906 /* GooeySelect.swift in Sources */,
+				D1D9F76F1AB8306C0047A906 /* GooeySlider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

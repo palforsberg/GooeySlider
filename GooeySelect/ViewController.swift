@@ -8,18 +8,22 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-
+class ViewController: UIViewController, GooeySelectDelegate{
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        let select = GooeySelect(frame: CGRect(x: 20, y: 400, width: 280, height: 50))
+        select.delegate = self
+        select.color = UIColor.redColor()
+        select.showProgessLine = true
+        select.numberOfOptions = 5
+
+        self.view.addSubview(select)
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    func gooeySelectDidSelect(gs: GooeySelect, index: Int) {
+        println("Did select \(index)")
     }
-
 
 }
 

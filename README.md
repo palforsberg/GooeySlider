@@ -1,4 +1,4 @@
-# GooeySelect
+# GooeySlider
 Slider with discrete values and a gooey indicator
 
 Just add the GooeySelect directory to your project and add the following code to add the slider.

@@ -17,7 +17,7 @@ class ViewController: UIViewController, GooeySelectDelegate{
         select.color = UIColor.redColor()
         select.showProgessLine = true
         select.numberOfOptions = 5
-
+        
         self.view.addSubview(select)
     }
 

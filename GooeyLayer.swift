@@ -35,29 +35,30 @@ enum Animation {
 typealias Vectors = (CGVector, CGVector, CGVector, CGVector)
 typealias GooAnimation = (CAAnimation, Vectors)
 
-class GooeyLayer: CALayer{
+class GooeyLayer: CALayer, CAAnimationDelegate{
     
-    override init!(layer: AnyObject!) {
-        if(layer.isKindOfClass(GooeyLayer)){
-            self.nextVectors = (layer as GooeyLayer).nextVectors
-            self.color = (layer as GooeyLayer).color
-            self.currentVectors = (layer as GooeyLayer).currentVectors
-            self.insets = (layer as GooeyLayer).insets
-//            self.center = (layer as GooeyLayer).center
+    override init(layer _layer: Any) {
+        
+        if let layer = _layer as? GooeyLayer{
+            self.nextVectors = layer.nextVectors
+            self.color = layer.color
+            self.currentVectors = layer.currentVectors
+            self.insets = layer.insets
+            //            self.center = (layer as GooeyLayer).center
         } else{
             nextVectors = VectorsFunc.zero()
-            self.color = UIColor.redColor().CGColor
+            self.color = UIColor.red.cgColor
             self.currentVectors = VectorsFunc.zero()
-//            self.center = CGPointZero
+            //            self.center = CGPointZero
         }
-        super.init(layer: layer)
+        super.init(layer: _layer)
     }
     
-    override init!() {
+    override init() {
         
         self.nextVectors = VectorsFunc.zero()
         self.currentVectors = VectorsFunc.zero()
-//        self.center = CGPointZero
+        //        self.center = CGPointZero
         super.init()
         
     }
@@ -65,8 +66,8 @@ class GooeyLayer: CALayer{
         
         self.nextVectors = VectorsFunc.zero()
         self.currentVectors = VectorsFunc.zero()
-//        self.center = CGPointZero
-        super.init(coder: aDecoder)
+        //        self.center = CGPointZero
+        super.init(coder: aDecoder)!
     }
     
     
@@ -82,11 +83,11 @@ class GooeyLayer: CALayer{
     var color : CGColor?
     var damping : Double = 0.2
     var velocity : Double = 2.5
-//    var center : CGPoint {
-//        didSet{
-//            frame = CGRect(x: center.x - self.frame.size.width/2, y: center.y - self.frame.size.height/2, width: self.frame.size.width, height: self.frame.size.height)
-//        }
-//    }
+    //    var center : CGPoint {
+    //        didSet{
+    //            frame = CGRect(x: center.x - self.frame.size.width/2, y: center.y - self.frame.size.height/2, width: self.frame.size.width, height: self.frame.size.height)
+    //        }
+    //    }
     
     override var frame : CGRect{
         didSet{
@@ -94,11 +95,11 @@ class GooeyLayer: CALayer{
         }
     }
     
-    override class func needsDisplayForKey(key: String!) -> Bool {
+    override class func needsDisplay(forKey key: String) -> Bool {
         if (key == "xpercent") {
             return true
         }
-        return super.needsDisplayForKey(key)
+        return super.needsDisplay(forKey: key)
     }
     
     func vectorsForDirection(d : Direction) -> Vectors{
@@ -117,8 +118,8 @@ class GooeyLayer: CALayer{
             
         case Direction.RightIn:
             return rightInVectors()
-        default :
-            return VectorsFunc.zero()
+            //        default :
+            //            return VectorsFunc.zero()
         }
     }
     
@@ -159,20 +160,19 @@ class GooeyLayer: CALayer{
     func getAnimation(duration : CFTimeInterval, direction : Direction, type : Animation)-> GooAnimation{
         var ani : CAAnimation?
         if type == Animation.Calm{
-            ani = SpringAnimation.create("xpercent", duration: duration, fromValue: Double(0.0), toValue: Double(1.0))
+            ani = SpringAnimation.create(keypath: "xpercent", duration: duration, fromValue: Double(0.0) as AnyObject, toValue: Double(1.0) as AnyObject)
             
         } else{
-            ani = SpringAnimation.createSpring("xpercent", duration: duration, usingSpringWithDamping: damping, initialSpringVelocity: velocity, fromValue: 0.0, toValue: 1.0)
+            ani = SpringAnimation.createSpring(keypath: "xpercent", duration: duration, usingSpringWithDamping: damping, initialSpringVelocity: velocity, fromValue: 0.0, toValue: 1.0)
         }
-        return (ani!, vectorsForDirection(direction))
+        return (ani!, vectorsForDirection(d: direction))
     }
     
     func animateGroup(as_ : [GooAnimation]){
-        animationQueue.removeAll(keepCapacity: false)
+        animationQueue.removeAll(keepingCapacity: false)
         animationQueue = as_
         
-        if(self.animationForKey("animation eeoo") != nil){
-            
+        if(self.animation(forKey: "animation eeoo") != nil){
             self.removeAllAnimations()
         } else {
             applyNexAnimation()
@@ -180,14 +180,14 @@ class GooeyLayer: CALayer{
     }
     
     func doneAnimating(){
-//        println("Done animating")
+        //        println("Done animating")
         self.animating = false
         self.xpercent = 0.0
         self.currentVectors = self.nextVectors
         self.nextVectors = VectorsFunc.zero()
     }
     
-    override func animationDidStop(anim: CAAnimation!, finished flag: Bool) {
+    func animationDidStop(_ anim: CAAnimation, finished flag: Bool) {
         
         doneAnimating()
         applyNexAnimation()
@@ -197,55 +197,60 @@ class GooeyLayer: CALayer{
         if animationQueue.count == 0 {  return  }
         
         let gooani = animationQueue.first
-        animationQueue.removeAtIndex(0)
+        animationQueue.remove(at: 0)
         
         self.nextVectors = gooani!.1
         self.xpercent = 1.0
         self.animating = true
         gooani!.0.delegate = self
         
-        self.addAnimation(gooani!.0, forKey: "animation eeoo")
+        self.add(gooani!.0, forKey: "animation eeoo")
     }
     
     
     func setPullForce(force : CGFloat){
         self.removeAllAnimations()
         let vectors = force > 0 ? rightOutVectors() : leftOutVectors()
-        self.currentVectors = VectorsFunc.multConst(vectors, k: abs(force))
+        self.currentVectors = VectorsFunc.multConst(v1: vectors, k: abs(force))
     }
     
-    override func drawInContext(ctx: CGContext!) {
-        let insets_ = insets == nil ? 0 : insets!
+    override func draw(in ctx: CGContext) {
+        //        let insets_ = insets == nil ? 0 : insets!
         let rect = CGRect(x: self.frame.size.width/2 - size/2, y: self.frame.size.height/2 - size/2, width: size, height: size)
         let curve : CGFloat = rect.size.width/3.6
         
         var d = self.currentVectors
         var next = self.nextVectors
         
-        d = VectorsFunc.multConst(d, k: 1 - xpercent)
-        next = VectorsFunc.multConst(next, k: xpercent)
-        d = VectorsFunc.plus(d, v2: next)
+        d = VectorsFunc.multConst(v1: d, k: 1 - xpercent)
+        next = VectorsFunc.multConst(v1: next, k: xpercent)
+        d = VectorsFunc.plus(v1: d, v2: next)
         
-        CGContextAddPath(ctx, circleDistortPath(rect, curve: curve,
-            d1: d.0,
-            d2: d.1,
-            d3: d.2,
-            d4: d.3))
-        CGContextSetFillColorWithColor(ctx, self.color);
+        ctx.addPath(circleDistortPath(rect: rect, curve: curve,
+                                      d1: d.0,
+                                      d2: d.1,
+                                      d3: d.2,
+                                      d4: d.3))
+        //        CGContextAddPath(ctx, circleDistortPath(rect, curve: curve,
+        //            d1: d.0,
+        //            d2: d.1,
+        //            d3: d.2,
+        //            d4: d.3))
+        ctx.setFillColor(self.color!);
         
-        CGContextFillPath(ctx);
+        ctx.fillPath();
     }
     
     
-    func currentCirclePath()->CGMutablePathRef{
+    func currentCirclePath()->CGMutablePath{
         let rect = CGRect(x: self.frame.size.width/2 - size/2, y: self.frame.size.height/2 - size/2, width: size, height: size)
         let curve : CGFloat = rect.size.width/3.6
-        return circleDistortPath(rect, curve: curve, d1: currentVectors.0, d2: currentVectors.1, d3: currentVectors.2, d4: currentVectors.3)
+        return circleDistortPath(rect: rect, curve: curve, d1: currentVectors.0, d2: currentVectors.1, d3: currentVectors.2, d4: currentVectors.3)
     }
-    func circleDistortPath(rect : CGRect, curve : CGFloat, d1 : CGVector, d2 : CGVector, d3 : CGVector, d4 : CGVector)->CGMutablePathRef{
-        let nilvector = CGVector(dx:0, dy:0);
+    
+    func circleDistortPath(rect : CGRect, curve : CGFloat, d1 : CGVector, d2 : CGVector, d3 : CGVector, d4 : CGVector)->CGMutablePath{
         
-        return GooeyLayer.circlePath(rect, curve: curve, vs: (
+        return GooeyLayer.circlePath(rect: rect, curve: curve, vs: (
             CGVector(dx:d1.dx, dy:d1.dy),
             CGVector(dx:d2.dx, dy:d2.dy),
             CGVector(dx:d3.dx, dy:d3.dy),
@@ -253,8 +258,8 @@ class GooeyLayer: CALayer{
     }
     
     
-    class func circlePath(rect : CGRect, curve : CGFloat, vs : Vectors) -> CGMutablePathRef{
-        var path = CGPathCreateMutable()
+    class func circlePath(rect : CGRect, curve : CGFloat, vs : Vectors) -> CGMutablePath{
+        let path = CGMutablePath()
         
         let x1 : CGFloat = ((rect.size.width)/2) + vs.0.dx     + rect.origin.x
         let y1 : CGFloat = (0 + vs.0.dy)                       + rect.origin.y
@@ -268,27 +273,51 @@ class GooeyLayer: CALayer{
         let x4 : CGFloat = (0 + vs.3.dx)                       + rect.origin.x
         let y4 : CGFloat = ((rect.size.height)/2) + vs.3.dy    + rect.origin.y
         
-        CGPathMoveToPoint(path, nil, x1, y1)
-        CGPathAddCurveToPoint(path, nil,
-            x1 + curve, y1,
-            x2, y2 - curve,
-            x2, y2)
         
-        CGPathAddCurveToPoint(path, nil,
-            x2, y2 + curve,
-            x3 + curve, y3,
-            x3, y3)
+        path.move(to: CGPoint(x: x1, y: y1))
+        path.addCurve(
+            to:         CGPoint(x:x2,           y:y2),
+            control1:   CGPoint(x:x1+curve,     y:y1),
+            control2:   CGPoint(x:x2,           y:y2 - curve))
         
-        CGPathAddCurveToPoint(path, nil,
-            x3 - curve, y3,
-            x4, y4 + curve,
-            x4, y4)
+        path.addCurve(
+            to:         CGPoint(x:x3,           y:y3),
+            control1:   CGPoint(x:x2,           y:y2 + curve),
+            control2:   CGPoint(x:x3 + curve,   y:y3))
         
-        CGPathAddCurveToPoint(path, nil,
-            x4, y4 - curve,
-            x1 - curve, y1,
-            x1, y1)
-        CGPathCloseSubpath(path)
+        path.addCurve(
+            to:         CGPoint(x:x4,           y:y4),
+            control1:   CGPoint(x:x3 - curve,   y:y3),
+            control2:   CGPoint(x:x4,           y:y4 + curve))
+        
+        path.addCurve(
+            to:         CGPoint(x:x1,           y:y1),
+            control1:   CGPoint(x:x4,           y:y4 - curve),
+            control2:   CGPoint(x:x1 - curve,   y:y1))
+        
+        path.closeSubpath()
+        
+        //        CGPathMoveToPoint(path, nil, x1, y1)
+        //        CGPathAddCurveToPoint(path, nil,
+        //            x1 + curve, y1,
+        //            x2, y2 - curve,
+        //            x2, y2)
+        
+        //        CGPathAddCurveToPoint(path, nil,
+        //            x2, y2 + curve,
+        //            x3 + curve, y3,
+        //            x3, y3)
+        
+        //        CGPathAddCurveToPoint(path, nil,
+        //            x3 - curve, y3,
+        //            x4, y4 + curve,
+        //            x4, y4)
+        
+        //        CGPathAddCurveToPoint(path, nil,
+        //            x4, y4 - curve,
+        //            x1 - curve, y1,
+        //            x1, y1)
+        //        CGPathCloseSubpath(path)
         return path
     }
 }

@@ -14,7 +14,7 @@ class ViewController: UIViewController, GooeySliderDelegate{
         // Do any additional setup after loading the view, typically from a nib.
         let select = GooeySlider(frame: CGRect(x: 20, y: 400, width: 280, height: 50))
         select.delegate = self
-        select.color = UIColor.redColor()
+        select.color = UIColor.red
         select.showProgessLine = true
         select.numberOfOptions = 5
         
@@ -22,7 +22,7 @@ class ViewController: UIViewController, GooeySliderDelegate{
     }
 
     func gooeySliderDidSelect(gs: GooeySlider, index: Int) {
-        println("Did select \(index)")
+        print("Did select \(index)")
     }
 
 }

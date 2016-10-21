@@ -126,6 +126,7 @@ class GooeyView: UIView, UIGestureRecognizerDelegate {
     
     func animateCenter2(xpos : CGFloat){
         if !self.animatin {
+            
             self.animatin = true
             self.delegate?.gooeyViewWillAnimateTo(xpos: xpos)
             UIView.animate(withDuration: duration,
